@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check Tam Giác</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        button{
+            border-radius: 15px;
+            border: 1px solid #000;
+            padding: 14px 28px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: large;
+            position: relative;
+        }
+        button:hover{
+            border-radius: 15px;
+            border: 1px solid rgb(49, 49, 49);
+            box-shadow: 0 0 3px #000;
+            padding: 14px 28px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kiểm tra tam giác</h1>
+    <button onclick="kiemTraTamGiac()">Kiểm tra tam giác </button>
+    <script>
+        function kiemTraTamGiac (){
+                   var a = prompt('Xin mời nhập vào cạnh thứ 1 của tam giác: ','');
+                   var b = prompt('Xin mời nhập vào cạnh thứ 2 của tam giác: ','');
+                   var c = prompt('Xin mời nhập vào cạnh thứ 3 của tam giác: ','');
+                   if( a=="" || b=="" || c==""){
+                       document.write("<h1>Vui lòng điền đầy đủ thông tin !</h1>")
+                   }else if( a==0 || b ==0 || c==0){
+                       document.write('<h1>Đây không phải là một tam giác</h1>')
+                   }else {
+                       if(a==b && b==c && c==a){
+                            document.write('<h1>Đây là tam giác đều </h1>')
+                       } else if( a==b || b==c || c==a){
+                            document.write('<h1>Đây là tam giác cân </h1>')
+                       } else if ( b*b==a*a+c*c || a*a==b*b+c*c || c*c==b*b+a*a){
+                           document.write("<h1>Đây là tam giác vuông</h1>")
+                       }else {
+                           document.write("<h1>Đây là tam giác thường</h1>")
+                       }
+                   }
+        }
+
+    </script>
+
+</body>
+</html>
